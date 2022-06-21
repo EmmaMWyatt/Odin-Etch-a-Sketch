@@ -15,7 +15,7 @@ function createGrid(size) {
     const docFrag = document.createDocumentFragment();
 
     let grid = [];
-    for (let i = 0; i < size; i++) {
+    for (let i = 0; i < (size*size); i++) {
         grid.push(createSquare());
     }
 
