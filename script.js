@@ -1,12 +1,18 @@
 const container = document.querySelector("#grid-container");
 
-
 createGrid(16);
 
 //Individual Square on the Grid
-function createSquare() {
-    const gridSquare = document.createElement('div');
+function createSquare(i) {
+    let gridSquare = document.createElement('div');
     gridSquare.classList.add('grid-square');
+    gridSquare.setAttribute('id', "square:"+ i);
+
+    //add drawing ability
+    gridSquare.addEventListener("mouseover", () => {
+        //temporaraily just changes to blue TODO: let user change colour
+        gridSquare.style.backgroundColor = 'blue';
+    })
     return gridSquare;
 }
 
@@ -16,13 +22,12 @@ function createGrid(size) {
 
     let grid = [];
     for (let i = 0; i < (size*size); i++) {
-        grid.push(createSquare());
+        grid.push(createSquare(i));
+        
     }
 
     for (let i = 0; i < grid.length; i++) {
         docFrag.appendChild(grid[i]);
-        console.log("he");
     }
     container.appendChild(docFrag);
 }
-
