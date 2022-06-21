@@ -3,13 +3,14 @@ const container = document.querySelector("#grid-container");
 
 createGrid(16);
 
-
+//Individual Square on the Grid
 function createSquare() {
     const gridSquare = document.createElement('div');
     gridSquare.classList.add('grid-square');
     return gridSquare;
 }
 
+//Adds squares to grid container
 function createGrid(size) {
     const docFrag = document.createDocumentFragment();
 
@@ -25,17 +26,3 @@ function createGrid(size) {
     container.appendChild(docFrag);
 }
 
-
-
-/*
-function createGrid(size) {
-
-    for (let i = 1; i < size+1; i++) {
-        square = gridSquare;
-        square.id = 'square'+ i;
-        container.appendChild(square);
-        console.log("hello");
-        
-    }
-}
-*/
