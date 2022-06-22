@@ -1,12 +1,19 @@
 const container = document.querySelector("#grid-container");
+const btn = document.querySelector("#grid-button");
 
-createGrid(16);
+
+btn.addEventListener('click',() => {
+    x = prompt("please enter the size of grid you want");
+    createGrid(x);
+})
 
 //Individual Square on the Grid
 function createSquare(i) {
     let gridSquare = document.createElement('div');
     gridSquare.classList.add('grid-square');
     gridSquare.setAttribute('id', "square:"+ i);
+
+    //TODO: change square dimensions with grid size
 
     //add drawing ability
     gridSquare.addEventListener("mouseover", () => {
