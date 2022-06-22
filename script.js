@@ -3,11 +3,20 @@ const btn = document.querySelector("#grid-button");
 
 
 btn.addEventListener('click',() => {
-    x = prompt("please enter the size of grid you want");
-    //TODO: Reject invalid prompt inputs: Not an int and not between 1-100
+    x = prompt("please enter the size of grid you want. Must be between 1-100");
+    //test if input is valid
+    if (x < 1 || x > 100 || isNum(x) ===false) {
+        do {
+            x = prompt ("please enter a number between 1 and 100");
+        } while (x < 1 || x > 100 || isNum(x) === false );
+    }
     createGrid(x);
 })
 
+function isNum(input){
+    let isnum = /^\d+$/.test(input);
+    return isnum;
+}
 //Individual Square on the Grid
 function createSquare(i,size) {
     let gridSquare = document.createElement('div');
