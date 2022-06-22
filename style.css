@@ -1,14 +1,15 @@
 #grid-container {
     display: grid;
+    height: 800px;
+    width: 800px;
+    border: 10px solid black;
 /*TODO: column pixel size should be a variable that changes based on grid size and should be shared with individual square pixel size */ 
-    grid-template-columns: repeat(16, 10px);
+    grid-template-columns: repeat(16, 50px);
 }
 
 
 .grid-square {
 /*TODO: column pixel size should be a variable that changes based on grid size and should be shared with individual square pixel size */ 
-    height: 10px;
-    width: 10px;
     background-color: red;
     
 }
