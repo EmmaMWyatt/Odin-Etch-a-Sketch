@@ -1,6 +1,7 @@
 const container = document.querySelector("#grid-container");
 const btn = document.querySelector("#grid-button");
 
+createGrid(16);
 
 btn.addEventListener('click',() => {
     x = prompt("please enter the size of grid you want. Must be between 1-100");
