@@ -3,6 +3,7 @@ const btn = document.querySelector("#grid-button");
 
 
 btn.addEventListener('click',() => {
+    //TODO: Reject invalid prompt inputs
     x = prompt("please enter the size of grid you want");
     createGrid(x);
 })
@@ -25,6 +26,9 @@ function createSquare(i) {
 
 //Adds squares to grid container
 function createGrid(size) {
+    //Delete old grid first
+    container.textContent ='';
+    
     const docFrag = document.createDocumentFragment();
 
     let grid = [];
